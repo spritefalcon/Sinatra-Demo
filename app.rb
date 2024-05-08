@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-    'hello, world!'
+    erb :hello, layout: true
 end
 
 get '/hola' do
