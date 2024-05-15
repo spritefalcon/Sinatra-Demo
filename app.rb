@@ -1,7 +1,8 @@
 require 'sinatra'
 
 get '/' do
-    erb :hello, layout: true
+    @name = "world"
+    erb :index
 end
 
 get '/hola' do
@@ -9,5 +10,15 @@ get '/hola' do
 end
 
 get '/hello/:name' do
-    # todo
+    @name = params[:name]
+    erb :hello
+end
+
+get '/reverse' do
+    erb :reverse
+end
+
+post '/reverse' do
+    @reversed_string = params[:user_input].reverse
+    erb :reverse
 end
